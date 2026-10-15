@@ -1,4 +1,4 @@
-# SchemaBridge
+# InsureMapAI
 
 **Evidence-backed legacy insurance data mapping with an AI verifier and human approval.**
 
