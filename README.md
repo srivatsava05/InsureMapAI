@@ -1,8 +1,8 @@
-# InsureMap AI
+# InsureMapAI
 
 **Evidence-backed legacy insurance data mapping with an AI verifier and human approval.**
 
-InsureMap AI is a synthetic-data prototype for the Flarre AI Innovation Challenge 2026. It profiles legacy CSVs, retrieves relevant target definitions and dictionary notes (RAG), ranks candidate target fields, asks Gemini to select a mapping and a rule from a fixed vocabulary, executes the rule in a safe deterministic engine, validates the output, and places uncertain mappings in a review queue. It never executes model-written code. Retrieval is local lexical matching with insurance-specific term expansion and reviewer examples; the MVP does not require embeddings or a hosted vector database.
+InsureMapAI is a synthetic-data prototype for the Flarre AI Innovation Challenge 2026. It profiles legacy CSVs, retrieves relevant target definitions and dictionary notes (RAG), ranks candidate target fields, asks Gemini to select a mapping and a rule from a fixed vocabulary, executes the rule in a safe deterministic engine, validates the output, and places uncertain mappings in a review queue. It never executes model-written code. Retrieval is local lexical matching with insurance-specific term expansion and reviewer examples; the MVP does not require embeddings or a hosted vector database.
 
 ## What makes the demo distinct
 

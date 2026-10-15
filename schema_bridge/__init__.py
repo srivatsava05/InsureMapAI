@@ -1,2 +1,2 @@
-"""InsureMap AI core package."""
+"""InsureMapAI core package."""
 
