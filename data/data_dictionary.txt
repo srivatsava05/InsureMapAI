@@ -1,0 +1,30 @@
+Synthetic training dictionary for legacy export columns (illustrative; not carrier documentation).
+POL_NO: policy identifier assigned by the source policy system.
+INS_NM: insured name stored as LAST, FIRST.
+EFF_DT: policy effective date; mixed MMDDYYYY and YYMMDD strings.
+EXP_DT: policy expiration date.
+PREM_AMT: written premium stored as integer cents.
+STAT_CD: A active, C cancelled, X expired, P pending; Z is a deliberate unknown.
+LOB_CD: AUTO, HOME or PROP product family.
+AGT_ID: producer identifier.
+ST: two-character insured risk state.
+ZIP5: primary five digit postal code.
+ZIP4: optional postal suffix.
+PHONE: insured telephone, mixed punctuation.
+EMAIL: insured email address.
+ADDR1: insured street address.
+CITY: mailing city.
+DEDUCT_AMT: deductible stored in cents.
+LIMIT_AMT: limit stored in cents.
+COV_CD: COLL collision, LIAB liability, COMP comprehensive.
+VEH_YR: insured vehicle model year.
+VIN: synthetic vehicle identifier.
+RENEW_FLG: Y renewal, N new business.
+CR_DT: source row creation date, ISO format.
+CANCEL_DT: cancellation date, blank when not cancelled.
+CLM_NO: claim number.
+LOSS_DT: loss date; mixed YYYYMMDD and MM/DD/YYYY.
+RPT_DT: date claim was reported, MMDDYYYY.
+CLM_STAT: O open, C closed, R reopened.
+RSV_AMT: current reserve in cents.
+PAID_AMT: indemnity paid in cents.

@@ -1,0 +1,324 @@
+{
+  "label": "Synthetic data only; heuristic preview baseline, not Gemini performance or carrier validation.",
+  "runs": [
+    {
+      "dataset": "LEGACY_POLICY",
+      "fields": 25,
+      "top1_mapping_accuracy": 0.68,
+      "top3_candidate_recall": 1.0,
+      "rule_verifier_pass_rate": 0.84,
+      "auto_accept_precision": null,
+      "auto_accepted": 0,
+      "human_review_share": 1.0,
+      "seconds_local": 0.315,
+      "tokens": 0,
+      "worst_errors": [
+        {
+          "source": "INS_NM",
+          "expected": "full_name",
+          "predicted": "last_name",
+          "top_candidates": [
+            "last_name",
+            "first_name",
+            "full_name"
+          ]
+        },
+        {
+          "source": "ZIP4",
+          "expected": null,
+          "predicted": "coverage_type",
+          "top_candidates": [
+            "coverage_type",
+            "vehicle_id",
+            "postal_code"
+          ]
+        },
+        {
+          "source": "LIMIT_AMT",
+          "expected": "limit_amount",
+          "predicted": "coverage_type",
+          "top_candidates": [
+            "coverage_type",
+            "limit_amount",
+            "vehicle_id"
+          ]
+        }
+      ]
+    },
+    {
+      "dataset": "LEGACY_CLAIM",
+      "fields": 15,
+      "top1_mapping_accuracy": 0.8,
+      "top3_candidate_recall": 0.929,
+      "rule_verifier_pass_rate": 0.867,
+      "auto_accept_precision": 1.0,
+      "auto_accepted": 1,
+      "human_review_share": 0.933,
+      "seconds_local": 0.125,
+      "tokens": 0,
+      "worst_errors": [
+        {
+          "source": "RPT_DT",
+          "expected": "reported_date",
+          "predicted": "cause_code",
+          "top_candidates": [
+            "cause_code",
+            "coverage_type",
+            "vehicle_id"
+          ]
+        },
+        {
+          "source": "RSV_AMT",
+          "expected": "reserve_amount",
+          "predicted": "vehicle_id",
+          "top_candidates": [
+            "vehicle_id",
+            "reserve_amount",
+            "coverage_type"
+          ]
+        },
+        {
+          "source": "SRC_SYS",
+          "expected": null,
+          "predicted": "cause_code",
+          "top_candidates": [
+            "cause_code",
+            "risk_state",
+            "postal_code"
+          ]
+        }
+      ]
+    },
+    {
+      "dataset": "LEGACY_POLICY_V2",
+      "fields": 25,
+      "top1_mapping_accuracy": 0.76,
+      "top3_candidate_recall": 1.0,
+      "rule_verifier_pass_rate": 0.8,
+      "auto_accept_precision": 1.0,
+      "auto_accepted": 3,
+      "human_review_share": 0.88,
+      "seconds_local": 0.316,
+      "tokens": 0,
+      "worst_errors": [
+        {
+          "source": "customer_label",
+          "expected": "full_name",
+          "predicted": "last_name",
+          "top_candidates": [
+            "last_name",
+            "full_name",
+            "risk_state"
+          ]
+        },
+        {
+          "source": "postal_suffix",
+          "expected": null,
+          "predicted": "postal_code",
+          "top_candidates": [
+            "postal_code",
+            "coverage_type",
+            "vehicle_id"
+          ]
+        },
+        {
+          "source": "created_on",
+          "expected": null,
+          "predicted": "closed_date",
+          "top_candidates": [
+            "closed_date",
+            "reported_date",
+            "expiration_date"
+          ]
+        }
+      ]
+    }
+  ],
+  "feedback_comparison": {
+    "donor_dataset": "LEGACY_POLICY",
+    "held_out_variant": "LEGACY_POLICY_V2",
+    "held_out_fields": 25,
+    "v2_top1_without_feedback": 0.76,
+    "v2_top1_with_simulated_policy_feedback": 0.8,
+    "corrected_errors": 1,
+    "regressions": 0,
+    "note": "Ablation transfers simulated corrections from hand-authored policy gold to a renamed variant. The variant shares the synthetic generator and semantics, so this is not an independent test or a real reviewer experiment.",
+    "transitions": [
+      {
+        "source": "contract_key",
+        "truth": "policy_number",
+        "without_feedback": "policy_number",
+        "with_feedback": "policy_number",
+        "transition": "unchanged"
+      },
+      {
+        "source": "customer_label",
+        "truth": "full_name",
+        "without_feedback": "last_name",
+        "with_feedback": "full_name",
+        "transition": "corrected"
+      },
+      {
+        "source": "start_on",
+        "truth": "effective_date",
+        "without_feedback": "effective_date",
+        "with_feedback": "effective_date",
+        "transition": "unchanged"
+      },
+      {
+        "source": "end_on",
+        "truth": "expiration_date",
+        "without_feedback": "expiration_date",
+        "with_feedback": "expiration_date",
+        "transition": "unchanged"
+      },
+      {
+        "source": "written_premium_minor",
+        "truth": "premium_amount",
+        "without_feedback": "premium_amount",
+        "with_feedback": "premium_amount",
+        "transition": "unchanged"
+      },
+      {
+        "source": "lifecycle",
+        "truth": "policy_status",
+        "without_feedback": "policy_status",
+        "with_feedback": "policy_status",
+        "transition": "unchanged"
+      },
+      {
+        "source": "product_family",
+        "truth": "line_of_business",
+        "without_feedback": "line_of_business",
+        "with_feedback": "line_of_business",
+        "transition": "unchanged"
+      },
+      {
+        "source": "producer_ref",
+        "truth": "producer_id",
+        "without_feedback": "producer_id",
+        "with_feedback": "producer_id",
+        "transition": "unchanged"
+      },
+      {
+        "source": "risk_state",
+        "truth": "risk_state",
+        "without_feedback": "risk_state",
+        "with_feedback": "risk_state",
+        "transition": "unchanged"
+      },
+      {
+        "source": "postal_primary",
+        "truth": "postal_code",
+        "without_feedback": "postal_code",
+        "with_feedback": "postal_code",
+        "transition": "unchanged"
+      },
+      {
+        "source": "postal_suffix",
+        "truth": null,
+        "without_feedback": "postal_code",
+        "with_feedback": "postal_code",
+        "transition": "unchanged"
+      },
+      {
+        "source": "contact_tel",
+        "truth": "phone",
+        "without_feedback": "phone",
+        "with_feedback": "phone",
+        "transition": "unchanged"
+      },
+      {
+        "source": "contact_mail",
+        "truth": "email",
+        "without_feedback": "email",
+        "with_feedback": "email",
+        "transition": "unchanged"
+      },
+      {
+        "source": "street_line",
+        "truth": "street_address",
+        "without_feedback": "street_address",
+        "with_feedback": "street_address",
+        "transition": "unchanged"
+      },
+      {
+        "source": "municipality",
+        "truth": "city",
+        "without_feedback": "city",
+        "with_feedback": "city",
+        "transition": "unchanged"
+      },
+      {
+        "source": "deductible_minor",
+        "truth": "deductible_amount",
+        "without_feedback": "deductible_amount",
+        "with_feedback": "deductible_amount",
+        "transition": "unchanged"
+      },
+      {
+        "source": "coverage_limit_minor",
+        "truth": "limit_amount",
+        "without_feedback": "limit_amount",
+        "with_feedback": "limit_amount",
+        "transition": "unchanged"
+      },
+      {
+        "source": "coverage_kind",
+        "truth": "coverage_type",
+        "without_feedback": "coverage_type",
+        "with_feedback": "coverage_type",
+        "transition": "unchanged"
+      },
+      {
+        "source": "model_year",
+        "truth": "vehicle_year",
+        "without_feedback": "vehicle_year",
+        "with_feedback": "vehicle_year",
+        "transition": "unchanged"
+      },
+      {
+        "source": "asset_ref",
+        "truth": "vehicle_id",
+        "without_feedback": "vehicle_id",
+        "with_feedback": "vehicle_id",
+        "transition": "unchanged"
+      },
+      {
+        "source": "renewal_indicator",
+        "truth": "renewal_flag",
+        "without_feedback": "renewal_flag",
+        "with_feedback": "renewal_flag",
+        "transition": "unchanged"
+      },
+      {
+        "source": "created_on",
+        "truth": null,
+        "without_feedback": "closed_date",
+        "with_feedback": "closed_date",
+        "transition": "unchanged"
+      },
+      {
+        "source": "terminated_on",
+        "truth": null,
+        "without_feedback": "vehicle_id",
+        "with_feedback": "vehicle_id",
+        "transition": "unchanged"
+      },
+      {
+        "source": "producer_org",
+        "truth": null,
+        "without_feedback": "producer_id",
+        "with_feedback": "producer_id",
+        "transition": "unchanged"
+      },
+      {
+        "source": "origin_platform",
+        "truth": null,
+        "without_feedback": "loss_state",
+        "with_feedback": "loss_state",
+        "transition": "unchanged"
+      }
+    ]
+  }
+}

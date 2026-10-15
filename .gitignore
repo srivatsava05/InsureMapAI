@@ -1,0 +1,21 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.streamlit/secrets.toml
+data/generated/
+# Legacy local database from earlier versions; current app uses MongoDB.
+data/schemabridge.db
+*.log
+
+# Proposal and presentation deliverables are submitted separately from the app source.
+/proposal/
+
+# Local artifact builds and render previews.
+/.architecture_diagram_build/
+/.deck_build/
+/.interview_presentation_build/
+/.professional_project_deck_build/
+/.proposal_deck_build/
+/.proposal_review/
+

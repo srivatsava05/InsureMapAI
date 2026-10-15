@@ -1,0 +1,322 @@
+{
+  "label": "Synthetic simplified insurance target schema; not a real vendor schema.",
+  "fields": [
+    {
+      "entity": "policy",
+      "name": "policy_number",
+      "type": "string",
+      "required": true,
+      "description": "Unique contract identifier",
+      "allowed_values": []
+    },
+    {
+      "entity": "policy",
+      "name": "effective_date",
+      "type": "date",
+      "required": true,
+      "description": "Coverage start date",
+      "allowed_values": []
+    },
+    {
+      "entity": "policy",
+      "name": "expiration_date",
+      "type": "date",
+      "required": true,
+      "description": "Coverage end date",
+      "allowed_values": []
+    },
+    {
+      "entity": "policy",
+      "name": "premium_amount",
+      "type": "number",
+      "required": false,
+      "description": "Written premium in currency units",
+      "allowed_values": []
+    },
+    {
+      "entity": "policy",
+      "name": "policy_status",
+      "type": "string",
+      "required": true,
+      "description": "Policy lifecycle status",
+      "allowed_values": [
+        "active",
+        "cancelled",
+        "expired",
+        "pending"
+      ]
+    },
+    {
+      "entity": "policy",
+      "name": "line_of_business",
+      "type": "string",
+      "required": false,
+      "description": "Insurance product family",
+      "allowed_values": [
+        "auto",
+        "home",
+        "property"
+      ]
+    },
+    {
+      "entity": "policy",
+      "name": "producer_id",
+      "type": "string",
+      "required": false,
+      "description": "Producing agent reference",
+      "allowed_values": []
+    },
+    {
+      "entity": "policy",
+      "name": "risk_state",
+      "type": "string",
+      "required": false,
+      "description": "Two-letter risk state",
+      "allowed_values": [
+        "CA",
+        "TX",
+        "NY",
+        "WA",
+        "IL"
+      ]
+    },
+    {
+      "entity": "policy",
+      "name": "postal_code",
+      "type": "string",
+      "required": false,
+      "description": "Five-digit postal code",
+      "allowed_values": []
+    },
+    {
+      "entity": "insured",
+      "name": "full_name",
+      "type": "string",
+      "required": false,
+      "description": "Named insured full name",
+      "allowed_values": []
+    },
+    {
+      "entity": "insured",
+      "name": "first_name",
+      "type": "string",
+      "required": false,
+      "description": "Insured first name",
+      "allowed_values": []
+    },
+    {
+      "entity": "insured",
+      "name": "last_name",
+      "type": "string",
+      "required": false,
+      "description": "Insured family name",
+      "allowed_values": []
+    },
+    {
+      "entity": "insured",
+      "name": "phone",
+      "type": "string",
+      "required": false,
+      "description": "Contact telephone number",
+      "allowed_values": []
+    },
+    {
+      "entity": "insured",
+      "name": "email",
+      "type": "string",
+      "required": false,
+      "description": "Contact email",
+      "allowed_values": []
+    },
+    {
+      "entity": "insured",
+      "name": "street_address",
+      "type": "string",
+      "required": false,
+      "description": "Primary street address",
+      "allowed_values": []
+    },
+    {
+      "entity": "insured",
+      "name": "city",
+      "type": "string",
+      "required": false,
+      "description": "Mailing city",
+      "allowed_values": []
+    },
+    {
+      "entity": "coverage",
+      "name": "deductible_amount",
+      "type": "number",
+      "required": false,
+      "description": "Coverage deductible in currency units",
+      "allowed_values": []
+    },
+    {
+      "entity": "coverage",
+      "name": "limit_amount",
+      "type": "number",
+      "required": false,
+      "description": "Coverage limit in currency units",
+      "allowed_values": []
+    },
+    {
+      "entity": "coverage",
+      "name": "coverage_type",
+      "type": "string",
+      "required": false,
+      "description": "Coverage kind",
+      "allowed_values": [
+        "collision",
+        "liability",
+        "comprehensive"
+      ]
+    },
+    {
+      "entity": "coverage",
+      "name": "vehicle_year",
+      "type": "integer",
+      "required": false,
+      "description": "Model year for insured auto",
+      "allowed_values": []
+    },
+    {
+      "entity": "coverage",
+      "name": "vehicle_id",
+      "type": "string",
+      "required": false,
+      "description": "Vehicle identification value",
+      "allowed_values": []
+    },
+    {
+      "entity": "coverage",
+      "name": "renewal_flag",
+      "type": "boolean",
+      "required": false,
+      "description": "Whether policy is a renewal",
+      "allowed_values": []
+    },
+    {
+      "entity": "claim",
+      "name": "claim_number",
+      "type": "string",
+      "required": true,
+      "description": "Unique claim identifier",
+      "allowed_values": []
+    },
+    {
+      "entity": "claim",
+      "name": "policy_number",
+      "type": "string",
+      "required": true,
+      "description": "Related policy identifier",
+      "allowed_values": []
+    },
+    {
+      "entity": "claim",
+      "name": "loss_date",
+      "type": "date",
+      "required": true,
+      "description": "Date of insured loss",
+      "allowed_values": []
+    },
+    {
+      "entity": "claim",
+      "name": "reported_date",
+      "type": "date",
+      "required": false,
+      "description": "Date claim was reported",
+      "allowed_values": []
+    },
+    {
+      "entity": "claim",
+      "name": "claim_status",
+      "type": "string",
+      "required": false,
+      "description": "Claim lifecycle status",
+      "allowed_values": [
+        "open",
+        "closed",
+        "reopened"
+      ]
+    },
+    {
+      "entity": "claim",
+      "name": "reserve_amount",
+      "type": "number",
+      "required": false,
+      "description": "Current loss reserve in currency units",
+      "allowed_values": []
+    },
+    {
+      "entity": "claim",
+      "name": "paid_amount",
+      "type": "number",
+      "required": false,
+      "description": "Amount paid in currency units",
+      "allowed_values": []
+    },
+    {
+      "entity": "claim",
+      "name": "cause_code",
+      "type": "string",
+      "required": false,
+      "description": "Reported cause of loss",
+      "allowed_values": []
+    },
+    {
+      "entity": "claim",
+      "name": "adjuster_id",
+      "type": "string",
+      "required": false,
+      "description": "Assigned adjuster reference",
+      "allowed_values": []
+    },
+    {
+      "entity": "claim",
+      "name": "loss_state",
+      "type": "string",
+      "required": false,
+      "description": "State where loss occurred",
+      "allowed_values": [
+        "CA",
+        "TX",
+        "NY",
+        "WA",
+        "IL"
+      ]
+    },
+    {
+      "entity": "claim",
+      "name": "injury_flag",
+      "type": "boolean",
+      "required": false,
+      "description": "Whether injury is reported",
+      "allowed_values": []
+    },
+    {
+      "entity": "claim",
+      "name": "closed_date",
+      "type": "date",
+      "required": false,
+      "description": "Claim closure date",
+      "allowed_values": []
+    },
+    {
+      "entity": "claim",
+      "name": "expense_amount",
+      "type": "number",
+      "required": false,
+      "description": "Claim expense amount",
+      "allowed_values": []
+    },
+    {
+      "entity": "claim",
+      "name": "recovery_amount",
+      "type": "number",
+      "required": false,
+      "description": "Recovery/subrogation amount",
+      "allowed_values": []
+    }
+  ]
+}

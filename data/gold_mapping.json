@@ -1,0 +1,269 @@
+{
+  "label": "Hand-authored synthetic ground truth; some low-value source fields intentionally have no target.",
+  "policy": {
+    "POL_NO": [
+      "policy_number",
+      "COPY"
+    ],
+    "INS_NM": [
+      "full_name",
+      "COPY"
+    ],
+    "EFF_DT": [
+      "effective_date",
+      "DATE_PARSE"
+    ],
+    "EXP_DT": [
+      "expiration_date",
+      "DATE_PARSE"
+    ],
+    "PREM_AMT": [
+      "premium_amount",
+      "NUMERIC_SCALE"
+    ],
+    "STAT_CD": [
+      "policy_status",
+      "LOOKUP"
+    ],
+    "LOB_CD": [
+      "line_of_business",
+      "LOOKUP"
+    ],
+    "AGT_ID": [
+      "producer_id",
+      "COPY"
+    ],
+    "ST": [
+      "risk_state",
+      "TRIM_CASE"
+    ],
+    "ZIP5": [
+      "postal_code",
+      "COPY"
+    ],
+    "ZIP4": [
+      null,
+      "no_match"
+    ],
+    "PHONE": [
+      "phone",
+      "COPY"
+    ],
+    "EMAIL": [
+      "email",
+      "TRIM_CASE"
+    ],
+    "ADDR1": [
+      "street_address",
+      "COPY"
+    ],
+    "CITY": [
+      "city",
+      "COPY"
+    ],
+    "DEDUCT_AMT": [
+      "deductible_amount",
+      "NUMERIC_SCALE"
+    ],
+    "LIMIT_AMT": [
+      "limit_amount",
+      "NUMERIC_SCALE"
+    ],
+    "COV_CD": [
+      "coverage_type",
+      "LOOKUP"
+    ],
+    "VEH_YR": [
+      "vehicle_year",
+      "CAST"
+    ],
+    "VIN": [
+      "vehicle_id",
+      "COPY"
+    ],
+    "RENEW_FLG": [
+      "renewal_flag",
+      "LOOKUP"
+    ],
+    "CR_DT": [
+      null,
+      "no_match"
+    ],
+    "CANCEL_DT": [
+      null,
+      "no_match"
+    ],
+    "AGENCY_NM": [
+      null,
+      "no_match"
+    ],
+    "SRC_SYS": [
+      null,
+      "no_match"
+    ]
+  },
+  "claim": {
+    "CLM_NO": [
+      "claim_number",
+      "COPY"
+    ],
+    "POL_NO": [
+      "policy_number",
+      "COPY"
+    ],
+    "LOSS_DT": [
+      "loss_date",
+      "DATE_PARSE"
+    ],
+    "RPT_DT": [
+      "reported_date",
+      "DATE_PARSE"
+    ],
+    "CLM_STAT": [
+      "claim_status",
+      "LOOKUP"
+    ],
+    "RSV_AMT": [
+      "reserve_amount",
+      "NUMERIC_SCALE"
+    ],
+    "PAID_AMT": [
+      "paid_amount",
+      "NUMERIC_SCALE"
+    ],
+    "CAUSE_CD": [
+      "cause_code",
+      "COPY"
+    ],
+    "ADJ_ID": [
+      "adjuster_id",
+      "COPY"
+    ],
+    "LOSS_ST": [
+      "loss_state",
+      "TRIM_CASE"
+    ],
+    "INJURY_FLG": [
+      "injury_flag",
+      "LOOKUP"
+    ],
+    "CLOSED_DT": [
+      "closed_date",
+      "DATE_PARSE"
+    ],
+    "EXPENSE_AMT": [
+      "expense_amount",
+      "NUMERIC_SCALE"
+    ],
+    "RECOVERY_AMT": [
+      "recovery_amount",
+      "NUMERIC_SCALE"
+    ],
+    "SRC_SYS": [
+      null,
+      "no_match"
+    ]
+  },
+  "policy_v2": {
+    "contract_key": [
+      "policy_number",
+      "COPY"
+    ],
+    "customer_label": [
+      "full_name",
+      "COPY"
+    ],
+    "start_on": [
+      "effective_date",
+      "DATE_PARSE"
+    ],
+    "end_on": [
+      "expiration_date",
+      "DATE_PARSE"
+    ],
+    "written_premium_minor": [
+      "premium_amount",
+      "NUMERIC_SCALE"
+    ],
+    "lifecycle": [
+      "policy_status",
+      "LOOKUP"
+    ],
+    "product_family": [
+      "line_of_business",
+      "LOOKUP"
+    ],
+    "producer_ref": [
+      "producer_id",
+      "COPY"
+    ],
+    "risk_state": [
+      "risk_state",
+      "TRIM_CASE"
+    ],
+    "postal_primary": [
+      "postal_code",
+      "COPY"
+    ],
+    "postal_suffix": [
+      null,
+      "no_match"
+    ],
+    "contact_tel": [
+      "phone",
+      "COPY"
+    ],
+    "contact_mail": [
+      "email",
+      "TRIM_CASE"
+    ],
+    "street_line": [
+      "street_address",
+      "COPY"
+    ],
+    "municipality": [
+      "city",
+      "COPY"
+    ],
+    "deductible_minor": [
+      "deductible_amount",
+      "NUMERIC_SCALE"
+    ],
+    "coverage_limit_minor": [
+      "limit_amount",
+      "NUMERIC_SCALE"
+    ],
+    "coverage_kind": [
+      "coverage_type",
+      "LOOKUP"
+    ],
+    "model_year": [
+      "vehicle_year",
+      "CAST"
+    ],
+    "asset_ref": [
+      "vehicle_id",
+      "COPY"
+    ],
+    "renewal_indicator": [
+      "renewal_flag",
+      "LOOKUP"
+    ],
+    "created_on": [
+      null,
+      "no_match"
+    ],
+    "terminated_on": [
+      null,
+      "no_match"
+    ],
+    "producer_org": [
+      null,
+      "no_match"
+    ],
+    "origin_platform": [
+      null,
+      "no_match"
+    ]
+  }
+}
