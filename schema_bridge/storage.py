@@ -18,7 +18,7 @@ def _database(uri: str):
     except Exception as exc:
         client.close()
         raise RuntimeError(f"Could not connect to MongoDB. Check MONGODB_URI, Atlas network access and database-user credentials: {exc}") from exc
-    database = client[os.getenv("MONGODB_DB_NAME", "schemabridge")]
+    database = client[os.getenv("MONGODB_DB_NAME", "insuremap_ai")]
     database.decisions.create_index([("status", 1), ("source_name", 1)])
     database.audit.create_index([("created_at", -1)])
     return database

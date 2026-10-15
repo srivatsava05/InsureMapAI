@@ -1,2 +1,2 @@
-"""SchemaBridge core package."""
+"""InsureMap AI core package."""
 
